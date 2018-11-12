@@ -51,10 +51,24 @@ CL	vouta		voutb		'CL'
 ***	d	g	s	b	n/pmos114	w	l
 
 *** A Side ***
-
+m1a   dra  0    sda  vss  nmos114  w= l=
+ml1a  dra  vbp  vdd  vdd  pmos114  w= l=
+mb1a  sda  vbn  vss  vss  nmos114  w= l=
+ml2a  vdd  vdd  sla  vss  nmos114  w= l=
+m2a   sla  dra  sba  vss  nmos114  w= l=
+mb2a  sba  vbn  vss  vss  nmos114  w= l=
+m3a   vdd  sla  voa  vss  nmos114  w= l=
+mb3a  voa  vbn  vss  vss  nmos114  w= l=
 
 *** B Side ***
-
+m1b   drb  0    sdb  vss  nmos114  w= l=
+ml1b  drb  vbp  vdd  vdd  pmos114  w= l=
+mb1b  sdb  vbn  vss  vss  nmos114  w= l=
+ml2b  vdd  vdd  slb  vss  nmos114  w= l=
+m2b   slb  drb  sba  vss  nmos114  w= l=
+mb2b  sba  vbn  vss  vss  nmos114  w= l=
+m3b   vdd  slb  vob  vss  nmos114  w= l=
+mb3b  vob  vbn  vss  vss  nmos114  w= l=
 
 *** Current Bias ***
 

@@ -22,8 +22,8 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-.param Ru = 100k
-.param Rd = 500k
+.param Ru = 7k
+.param Rd = 10k
 
 * defining the supply voltages
 vdd vdd 0 2.5
@@ -40,7 +40,7 @@ vss vss 0 -2.5
 * defining load mosfet parameters
 .param wl1 = 16u
 .param ll1 = 2u
-.param wl2 = 80u
+.param wl2 = 30u
 .param ll2 = 2u
 
 * defining bias mosfet parameters
@@ -100,7 +100,7 @@ vbiasn vbn 0  -1.7
 rua   vdd   dra    Ru
 rda   dra   vss    Rd
 rub   vdd   drb    Ru
-rdb   dra   vss    Rd  
+rdb   drb   vss    Rd  
 
 * defining the analysis
 .op

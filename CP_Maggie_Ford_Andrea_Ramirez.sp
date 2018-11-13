@@ -51,30 +51,36 @@ CL	vouta		voutb		'CL'
 ***	d	g	s	b	n/pmos114	w	l
 
 *** A Side ***
-m1a   dra    0    iina   vss  nmos114  w= l=
-ml1a  dra    vbp  vdd    vdd  pmos114  w= l=
-mb1a  iina   vbn  vss    vss  nmos114  w= l=
-ml2a  vdd    vdd  sla    vss  nmos114  w= l=
-m2a   sla    dra  sba    vss  nmos114  w= l=
-mb2a  sba    vbn  vss    vss  nmos114  w= l=
-m3a   vdd    sla  vouta  vss  nmos114  w= l=
-mb3a  vouta  vbn  vss    vss  nmos114  w= l=
+m1a   dra    0    iina   vss  nmos114  w=4u l=2u
+ml1a  dra    vbp  vdd    vdd  pmos114  w=4u l=2u
+mb1a  iina   vbn  vss    vss  nmos114  w=4u l=2u
+ml2a  vdd    vdd  sla    vss  nmos114  w=4u l=2u
+m2a   sla    dra  sba    vss  nmos114  w=4u l=2u
+mb2a  sba    vbn  vss    vss  nmos114  w=4u l=2u
+m3a   vdd    sla  vouta  vss  nmos114  w=4u l=2u
+mb3a  vouta  vbn  vss    vss  nmos114  w=4u l=2u
 
 *** B Side ***
-m1b   drb    0    iinb   vss  nmos114  w= l=
-ml1b  drb    vbp  vdd    vdd  pmos114  w= l=
-mb1b  iinb   vbn  vss    vss  nmos114  w= l=
-ml2b  vdd    vdd  slb    vss  nmos114  w= l=
-m2b   slb    drb  sba    vss  nmos114  w= l=
-mb2b  sba    vbn  vss    vss  nmos114  w= l=
-m3b   vdd    slb  voutb  vss  nmos114  w= l=
-mb3b  voutb  vbn  vss    vss  nmos114  w= l=
+m1b   drb    0    iinb   vss  nmos114  w=4u l=2u
+ml1b  drb    vbp  vdd    vdd  pmos114  w=4u l=2u
+mb1b  iinb   vbn  vss    vss  nmos114  w=4u l=2u
+ml2b  vdd    vdd  slb    vss  nmos114  w=4u l=2u
+m2b   slb    drb  sba    vss  nmos114  w=4u l=2u
+mb2b  sba    vbn  vss    vss  nmos114  w=4u l=2u
+m3b   vdd    slb  voutb  vss  nmos114  w=4u l=2u
+mb3b  voutb  vbn  vss    vss  nmos114  w=4u l=2u
 
 *** Current Bias ***
 
 
 *** Your Bias Circuitry here ***
+vbiasp vbp 0  1.9
+vbiasn vbn 0  -1.9 
 
+rua   vdd   dra    10k
+rda   dra   vss    10k
+rub   vdd   drb    10k
+rdb   dra   vss    10k  
 
 * defining the analysis
 
@@ -98,3 +104,4 @@ mb3b  voutb  vbn  vss    vss  nmos114  w= l=
 *.tran 0.01u 4u 
 
 .end
+

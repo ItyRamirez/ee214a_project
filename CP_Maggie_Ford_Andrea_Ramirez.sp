@@ -22,29 +22,29 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-.param Ru = 10k
-.param Rd = 10k
+.param Ru = 100k
+.param Rd = 500k
 
 * defining the supply voltages
 vdd vdd 0 2.5
 vss vss 0 -2.5
 
 * defining the mosfet parameters
-.param w1 = 4u
+.param w1 = 2u
 .param l1 = 2u
-.param w2 = 4u
+.param w2 = 20u
 .param l2 = 2u
 .param w3 = 4u
 .param l3 = 2u
 
 * defining load mosfet parameters
-.param wl1 = 4u
+.param wl1 = 16u
 .param ll1 = 2u
-.param wl2 = 4u
+.param wl2 = 80u
 .param ll2 = 2u
 
 * defining bias mosfet parameters
-.param wb1 = 4u
+.param wb1 = 30u
 .param lb1 = 2u
 .param wb2 = 4u
 .param lb2 = 2u
@@ -94,8 +94,8 @@ mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** Current Bias ***
 *** Your Bias Circuitry here ***
-vbiasp vbp 0  1.9
-vbiasn vbn 0  -1.9 
+vbiasp vbp 0  1.5
+vbiasn vbn 0  -1.7 
 
 rua   vdd   dra    Ru
 rda   dra   vss    Rd
@@ -123,4 +123,5 @@ rdb   dra   vss    Rd
 *.tran 0.01u 4u 
 
 .end
+
 

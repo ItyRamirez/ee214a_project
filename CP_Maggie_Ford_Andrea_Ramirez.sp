@@ -21,6 +21,10 @@
 .param CL  = 250f
 .param RL  = 20k
 
+* Defining Low level circuit parameters
+.param Ru =
+.param Rd =
+
 * defining the supply voltages
 vdd vdd 0 DC=2.5
 vss vss 0 DC=-2.5
@@ -44,6 +48,8 @@ vss vss 0 DC=-2.5
 .param lb1 =
 .param wb2 =
 .param lb2 =
+.param wb3 =
+.param lb3 =
 
 * Defining the input current source
 * Note, having each source with ac magnitude of 0.5 (as below) ensures a differential input magnitude of 1
@@ -85,6 +91,11 @@ m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
 mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
 m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
 mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
+
+rua   vdd    dra  Ru    
+rda   vss    dra  Rd
+rub   vdd    drb  Ru
+rdb   vss    drb  Rd
 
 *** Current Bias ***
 *** Your Bias Circuitry here ***

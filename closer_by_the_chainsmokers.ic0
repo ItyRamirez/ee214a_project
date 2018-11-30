@@ -1,8 +1,8 @@
 * "simulator" "HSPICE" 
 * "version" "I-2013.12-SP2 64-BIT"
 * "format" "HSP"
-* "rundate" "02:42:43 11/30/2018 "
-* "netlist" "rev2.sp "
+* "rundate" "02:35:39 11/30/2018 "
+* "netlist" "closer_by_the_chainsmokers.sp "
 * "runtitle" "* design problem, ee114/214a- 2018"
 * time =    0.            
 * temperature =   25.0000        
@@ -10,17 +10,15 @@
 .option 
 + gmindc=   1.0000p       
 .nodeset
-+ dra = 715.4772m       
-+ drb = 715.4772m       
-+ iina =  -1.5979        
-+ iinb =  -1.5979        
-+ sba =  -1.0305        
-+ sla = 498.0543m       
-+ slb = 498.0543m       
++ dra = 287.6719m       
++ drb = 287.6719m       
++ iina =  -1.6044        
++ iinb =  -1.6044        
++ sba =  -1.5220        
++ sla = 877.0051m       
++ slb = 877.0051m       
 + vbn =  -1.1200        
 + vbp = 720.0000m       
 + vdd =   2.5000        
-+ vouta =  -1.1751        
-+ voutb =  -1.1751        
 + vss =  -2.5000        
 ***   END: Saved Operating Point ***                     

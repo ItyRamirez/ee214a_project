@@ -32,23 +32,23 @@ vss vss 0 -2.5
 * defining load mosfet parameters
 .param wl1 = 8u
 .param ll1 = 2u
-.param wl2 = 2u
+.param wl2 = 22u
 .param ll2 = 2u
 
 * defining the mosfet parameters
 .param w1 = 8u
 .param l1 = 2u
-.param w2 = 2u
+.param w2 = 4u
 .param l2 = 2u
-.param w3 = 2u
+.param w3 = 100u
 .param l3 = 2u
 
 * defining bias mosfet parameters
 .param wb1 = 8u
 .param lb1 = 2u
-.param wb2 = 2u
+.param wb2 = 4u
 .param lb2 = 2u
-.param wb3 = 2u
+.param wb3 = 4u
 .param lb3 = 2u
 
 * Defining the input current source
@@ -66,8 +66,8 @@ Cina	vdd	iina 'Cin'
 Cinb	vdd	iinb 'Cin'
 
 * Defining the differential load 
-*RL	vouta		voutb		'RL'
-*CL	vouta		voutb		'CL'
+RL	vouta		voutb		'RL'
+CL	vouta		voutb		'CL'
 
 *** Your Trans-impedance Amplifier here ***
 ***	d	g	s	b	n/pmos114	w	l

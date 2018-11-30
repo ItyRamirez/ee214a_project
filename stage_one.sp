@@ -29,22 +29,23 @@
 vdd vdd 0 2.5
 vss vss 0 -2.5
 
+
+* defining load mosfet parameters
+.param wl1 = 1000u
+.param ll1 = 2u
+*.param wl2 = 4u
+*.param ll2 = 2u
+
 * defining the mosfet parameters
-.param w1 = 16u
+.param w1 = 500u
 .param l1 = 2u
 *.param w2 = 30u
 *.param l2 = 2u
 *.param w3 = 4u
 *.param l3 = 2u
 
-* defining load mosfet parameters
-.param wl1 = 32u
-.param ll1 = 2u
-*.param wl2 = 4u
-*.param ll2 = 2u
-
 * defining bias mosfet parameters
-.param wb1 = 32u
+.param wb1 = 500u
 .param lb1 = 2u
 *.param wb2 = 4u
 *.param lb2 = 2u

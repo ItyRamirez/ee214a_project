@@ -1,0 +1,21 @@
+* "simulator" "HSPICE" 
+* "version" "I-2013.12-SP2 64-BIT"
+* "format" "HSP"
+* "rundate" "19:58:00 11/29/2018 "
+* "netlist" "stage_one.sp "
+* "runtitle" "* design problem, ee114/214a- 2018"
+* time =    0.            
+* temperature =   25.0000        
+*** BEGIN: Saved Operating Point ***                     
+.option 
++ gmindc=   1.0000p       
+.nodeset
++ iina =  -1.0639        
++ iinb =  -1.0639        
++ vbn =  -1.8500        
++ vbp =   1.8500        
++ vdd =   2.5000        
++ vouta =   2.2759        
++ voutb =   2.2759        
++ vss =  -2.5000        
+***   END: Saved Operating Point ***                     

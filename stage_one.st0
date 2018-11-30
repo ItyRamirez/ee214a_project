@@ -3,7 +3,7 @@
  lic:
  lic: FLEXlm: v10.9.8
  lic: USER:   emmaford             HOSTNAME: rice14
- lic: HOSTID:                      PID:      8685
+ lic: HOSTID:                      PID:      11327
  lic: Using FLEXlm license file:
  lic: 27000@cadlic0
  lic: Checkout 1 hspice
@@ -14,8 +14,8 @@
        option post
        option brief
        option nomod
- init: end read circuit files,  cpu clock=  7.80E-01 peak memory=       193 mb
- init: begin check errors,  cpu clock=  7.80E-01
+ init: end read circuit files,  cpu clock=  7.70E-01 peak memory=       193 mb
+ init: begin check errors,  cpu clock=  7.70E-01
  init: end check errors,  cpu clock=  7.80E-01 peak memory=       194 mb
  init: begin setup matrix, pivot=     0 cpu clock=  7.80E-01
        establish matrix -- done,  cpu clock=  7.80E-01 peak memory=       194 mb

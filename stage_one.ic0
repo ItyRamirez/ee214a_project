@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "I-2013.12-SP2 64-BIT"
 * "format" "HSP"
-* "rundate" "19:58:00 11/29/2018 "
+* "rundate" "20:02:58 11/29/2018 "
 * "netlist" "stage_one.sp "
 * "runtitle" "* design problem, ee114/214a- 2018"
 * time =    0.            

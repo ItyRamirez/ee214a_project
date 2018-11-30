@@ -54,7 +54,7 @@ vss vss 0 -2.5
 * Defining the input current source
 * Note, having each source with ac magnitude of 0.5 (as below) ensures a differential input magnitude of 1
 ** For ac simulation uncomment the following 2 lines** 
- Iina		iina	vdd	ac	0.5	
+ Iina		iina	vdd	ac	1	
  Iinb		vdd	iinb	ac	0.5	
 
 ** For transient simulation uncomment the following 2 lines**
@@ -73,8 +73,8 @@ Cinb	vdd	iinb 'Cin'
 ***	d	g	s	b	n/pmos114	w	l
 
 *** A Side ***
-m1a   dra    0    iina   vss  nmos114  w=w1 l=l1
-ml1a  dra    vbp  vdd    vdd  pmos114  w=wl1 l=ll1
+m1a   vouta    0    iina   vss  nmos114  w=w1 l=l1
+ml1a  vouta    vbp  vdd    vdd  pmos114  w=wl1 l=ll1
 mb1a  iina     vbn  vss    vss  nmos114  w=wb1 l=lb1
 *ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
 *m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
@@ -83,8 +83,8 @@ mb1a  iina     vbn  vss    vss  nmos114  w=wb1 l=lb1
 *mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** B Side ***
-m1b   drb    0    iinb   vss  nmos114  w=w1 l=l1
-ml1b  drb    vbp  vdd    vdd  pmos114  w=wl1 l=ll1
+m1b   voutb    0    iinb   vss  nmos114  w=w1 l=l1
+ml1b  voutb    vbp  vdd    vdd  pmos114  w=wl1 l=ll1
 mb1b  iinb     vbn  vss    vss  nmos114  w=wb1 l=lb1
 *ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
 *m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
@@ -97,10 +97,10 @@ mb1b  iinb     vbn  vss    vss  nmos114  w=wb1 l=lb1
 vbiasp vbp 0  0.72
 vbiasn vbn 0  -1.12 
 
-rua   vdd   dra    Ru
-rda   dra   vss    Rd
-rub   vdd   drb    Ru
-rdb   drb   vss    Rd  
+rua   vdd   vouta    Ru
+rda   vouta   vss    Rd
+rub   vdd   voutb    Ru
+rdb   voutb   vss    Rd  
 
 * defining the analysis
 .op
@@ -110,32 +110,15 @@ rdb   drb   vss    Rd
 .ac dec 1k 100 1g
 * add line for noise simulation
 
-.measure ac gainmaxa1 max vdb(dra)
-.measure ac f3dba1 when vdb(dra)='gainmaxa1-3'
+.measure ac gainmaxa max vdb(vouta)
+.measure ac f3dba when vdb(vouta)='gainmaxa-3'
 
-.measure ac gainmaxb1 max vdb(drb)
-.measure ac f3dbb1 when vdb(drb)='gainmaxb1-3'
-
-* Note, the statement below gives you the differential gain
-.measure ac gaindiff1 max vdb(dra, drb)
-
-.measure ac gainmaxa2 max vdb(sla)
-.measure ac f3dba2 when vdb(sla)='gainmaxa2-3'
-
-.measure ac gainmaxb2 max vdb(slb)
-.measure ac f3dbb2 when vdb(slb)='gainmaxb2-3'
+.measure ac gainmaxb max vdb(voutb)
+.measure ac f3dbb when vdb(voutb)='gainmaxb-3'
 
 * Note, the statement below gives you the differential gain
-.measure ac gaindiff2 max vdb(sla, slb)
+.measure ac gaindiff max vdb(vouta, voutb)
 
-.measure ac gainmaxa3 max vdb(vouta)
-.measure ac f3dba3 when vdb(vouta)='gainmaxa3-3'
-
-.measure ac gainmaxb3 max vdb(voutb)
-.measure ac f3dbb3 when vdb(voutb)='gainmaxb3-3'
-
-* Note, the statement below gives you the differential gain
-.measure ac gaindiff3 max vdb(vouta, voutb)
 ** For transient simulation uncomment the following line **
 *.tran 0.01u 4u 
 

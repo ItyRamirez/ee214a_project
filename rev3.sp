@@ -30,7 +30,7 @@ vdd vdd 0 2.5
 vss vss 0 -2.5
 
 * defining load mosfet parameters
-.param wl1 = 8u
+.param wl1 = 6u
 .param ll1 = 2u
 .param wl2 = 22u
 .param ll2 = 2u
@@ -44,11 +44,11 @@ vss vss 0 -2.5
 .param l3 = 2u
 
 * defining bias mosfet parameters
-.param wb1 = 8u
+.param wb1 = 6u
 .param lb1 = 2u
 .param wb2 = 4u
 .param lb2 = 2u
-.param wb3 = 4u
+.param wb3 = 6u
 .param lb3 = 2u
 
 * Defining the input current source

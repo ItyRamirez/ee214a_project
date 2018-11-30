@@ -22,8 +22,8 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-.param Ru = 74k
-.param Rd = 86k
+.param Ru = 118400
+.param Rd = 137600
 
 * defining the supply voltages
 vdd vdd 0 2.5
@@ -54,7 +54,7 @@ vss vss 0 -2.5
 * Defining the input current source
 * Note, having each source with ac magnitude of 0.5 (as below) ensures a differential input magnitude of 1
 ** For ac simulation uncomment the following 2 lines** 
- Iina		iina	vdd	ac	1	
+ Iina		iina	vdd	ac	0.5	
  Iinb		vdd	iinb	ac	0.5	
 
 ** For transient simulation uncomment the following 2 lines**

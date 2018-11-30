@@ -2,5 +2,5 @@ $DATA1 SOURCE='HSPICE' VERSION='I-2013.12-SP2 64-BIT'
 .TITLE '* design problem, ee114/214a- 2018'
  gainmaxa         f3dba            gainmaxb         f3dbb             
  gaindiff         temper           alter#            
-   86.4691         1.122e+08         86.3724         1.111e+08        
-   92.4415          25.0000        1                 
+   86.2423         8.404e+07         86.2423         8.404e+07        
+   92.2629          25.0000        1                 

@@ -1,7 +1,7 @@
 * "simulator" "HSPICE" 
 * "version" "I-2013.12-SP2 64-BIT"
 * "format" "HSP"
-* "rundate" "21:13:32 11/29/2018 "
+* "rundate" "21:26:35 11/29/2018 "
 * "netlist" "CP_Maggie_Ford_Andrea_Ramirez.sp "
 * "runtitle" "* design problem, ee114/214a- 2018"
 * time =    0.            
@@ -10,15 +10,15 @@
 .option 
 + gmindc=   1.0000p       
 .nodeset
-+ dra = 545.5635m       
-+ drb = 545.5635m       
-+ iina =  -1.6004        
-+ iinb =  -1.6004        
-+ sba =  -1.1672        
++ dra = 715.4772m       
++ drb = 715.4772m       
++ iina =  -1.5979        
++ iinb =  -1.5979        
++ sba =  -1.0305        
 + vbn =  -1.1200        
 + vbp = 720.0000m       
 + vdd =   2.5000        
-+ vouta = 500.4155m       
-+ voutb = 500.4155m       
++ vouta = 498.0543m       
++ voutb = 498.0543m       
 + vss =  -2.5000        
 ***   END: Saved Operating Point ***                     

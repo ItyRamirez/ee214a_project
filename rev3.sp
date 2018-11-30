@@ -22,34 +22,34 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-.param Ru = 37k
-.param Rd = 55k
+.param Ru = 118400
+.param Rd = 137600
 
 * defining the supply voltages
 vdd vdd 0 2.5
 vss vss 0 -2.5
 
 * defining load mosfet parameters
-.param wl1 = 16u
+.param wl1 = 8u
 .param ll1 = 2u
-*.param wl2 = 2u
-*.param ll2 = 2u
+.param wl2 = 2u
+.param ll2 = 2u
 
 * defining the mosfet parameters
-.param w1 = 4u
+.param w1 = 8u
 .param l1 = 2u
-*.param w2 = 2u
-*.param l2 = 2u
-*.param w3 = 2u
-*.param l3 = 2u
+.param w2 = 2u
+.param l2 = 2u
+.param w3 = 2u
+.param l3 = 2u
 
 * defining bias mosfet parameters
-.param wb1 = 4u
+.param wb1 = 8u
 .param lb1 = 2u
-*.param wb2 = 2u
-*.param lb2 = 2u
-*.param wb3 = 2u
-*.param lb3 = 2u
+.param wb2 = 2u
+.param lb2 = 2u
+.param wb3 = 2u
+.param lb3 = 2u
 
 * Defining the input current source
 * Note, having each source with ac magnitude of 0.5 (as below) ensures a differential input magnitude of 1
@@ -73,34 +73,34 @@ Cinb	vdd	iinb 'Cin'
 ***	d	g	s	b	n/pmos114	w	l
 
 *** A Side ***
-m1a   vouta    0    iina   vss  nmos114  w='w1' l='l1'
-ml1a  vouta    vbp  vdd    vdd  pmos114  w='wl1' l='ll1'
-mb1a  iina     vbn  vss    vss  nmos114  w='wb1' l='lb1'
-*ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
-*m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
-*mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
-*m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
-*mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
+m1a   dra    0    iina   vss  nmos114  w=w1 l=l1
+ml1a  dra    vbp  vdd    vdd  pmos114  w=wl1 l=ll1
+mb1a  iina   vbn  vss    vss  nmos114  w=wb1 l=lb1
+ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
+m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
+mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
+m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
+mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** B Side ***
-m1b   voutb    0    iinb   vss  nmos114  w='w1' l='l1'
-ml1b  voutb    vbp  vdd    vdd  pmos114  w='wl1' l='ll1'
-mb1b  iinb     vbn  vss    vss  nmos114  w='wb1' l='lb1'
-*ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
-*m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
-*mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
-*m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
-*mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
+m1b   drb    0    iinb   vss  nmos114  w=w1 l=l1
+ml1b  drb    vbp  vdd    vdd  pmos114  w=wl1 l=ll1
+mb1b  iinb   vbn  vss    vss  nmos114  w=wb1 l=lb1
+ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
+m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
+mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
+m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
+mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** Current Bias ***
 *** Your Bias Circuitry here ***
-vbiasp vbp 0  1.4
+vbiasp vbp 0  0.72
 vbiasn vbn 0  -1.12 
 
-rua   vdd   vouta    'Ru'
-rda   vouta   vss    'Rd'
-rub   vdd   voutb    'Ru'
-rdb   voutb   vss    'Rd' 
+rua   vdd   dra    Ru
+rda   dra   vss    Rd
+rub   vdd   drb    Ru
+rdb   drb   vss    Rd  
 
 * defining the analysis
 .op
@@ -123,7 +123,6 @@ rdb   voutb   vss    'Rd'
 *.tran 0.01u 4u 
 
 .end
-
 
 
 

@@ -2,29 +2,29 @@
  Input File: stage_one.sp
  lic:
  lic: FLEXlm: v10.9.8
- lic: USER:   emmaford             HOSTNAME: rice14
- lic: HOSTID:                      PID:      17817
+ lic: USER:   emmaford             HOSTNAME: rice11
+ lic: HOSTID:                      PID:      24119
  lic: Using FLEXlm license file:
  lic: 27000@cadlic0
  lic: Checkout 1 hspice
  lic: License/Maintenance for hspice will expire on 06-nov-2020/2018.09
  lic: 1(in_use)/100(total) FLOATING license(s) on SERVER 27000@cadlic0
  lic:
- init: begin read circuit files,  cpu clock=  7.90E-01
+ init: begin read circuit files,  cpu clock=  7.30E-01
        option post
        option brief
        option nomod
- init: end read circuit files,  cpu clock=  7.90E-01 peak memory=       193 mb
- init: begin check errors,  cpu clock=  7.90E-01
- init: end check errors,  cpu clock=  7.90E-01 peak memory=       194 mb
- init: begin setup matrix, pivot=     0 cpu clock=  7.90E-01
-       establish matrix -- done,  cpu clock=  7.90E-01 peak memory=       194 mb
-       re-order matrix -- done,  cpu clock=  7.90E-01 peak memory=       194 mb
- init: end setup matrix,  cpu clock=  7.90E-01 peak memory=       194 mb
- dcop: begin dcop,  cpu clock=  7.90E-01
- dcop: end dcop,  cpu clock=  8.00E-01 peak memory=       194 mb  tot_iter=       7
+ init: end read circuit files,  cpu clock=  7.30E-01 peak memory=       193 mb
+ init: begin check errors,  cpu clock=  7.30E-01
+ init: end check errors,  cpu clock=  7.40E-01 peak memory=       194 mb
+ init: begin setup matrix, pivot=     0 cpu clock=  7.40E-01
+       establish matrix -- done,  cpu clock=  7.40E-01 peak memory=       194 mb
+       re-order matrix -- done,  cpu clock=  7.40E-01 peak memory=       194 mb
+ init: end setup matrix,  cpu clock=  7.40E-01 peak memory=       194 mb
+ dcop: begin dcop,  cpu clock=  7.40E-01
+ dcop: end dcop,  cpu clock=  7.40E-01 peak memory=       194 mb  tot_iter=       7
  output: stage_one.ma0
- sweep: ac ac0    begin, #sweeps=7001 cpu clock=  8.00E-01
+ sweep: ac ac0    begin, #sweeps=7001 cpu clock=  7.40E-01
  ac: frequency=    1.00E+02
  ac: frequency=    5.01E+02
  ac: frequency=    2.51E+03
@@ -36,6 +36,6 @@
  ac: frequency=    3.98E+07
  ac: frequency=    2.00E+08
  ac: frequency=    1.00E+09
- sweep: ac ac0    end,  cpu clock=  8.50E-01 peak memory=       195 mb
+ sweep: ac ac0    end,  cpu clock=  8.00E-01 peak memory=       195 mb
 >info:         ***** hspice job concluded
  lic: Release hspice token(s)

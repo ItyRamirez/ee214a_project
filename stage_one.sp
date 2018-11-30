@@ -31,13 +31,13 @@ vss vss 0 -2.5
 
 
 * defining load mosfet parameters
-.param wl1 = 1000u
+.param wl1 = 8u
 .param ll1 = 2u
 *.param wl2 = 4u
 *.param ll2 = 2u
 
 * defining the mosfet parameters
-.param w1 = 500u
+.param w1 = 4u
 .param l1 = 2u
 *.param w2 = 30u
 *.param l2 = 2u
@@ -45,7 +45,7 @@ vss vss 0 -2.5
 *.param l3 = 2u
 
 * defining bias mosfet parameters
-.param wb1 = 500u
+.param wb1 = 4u
 .param lb1 = 2u
 *.param wb2 = 4u
 *.param lb2 = 2u

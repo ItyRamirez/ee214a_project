@@ -5,8 +5,8 @@ $DATA1 SOURCE='HSPICE' VERSION='I-2013.12-SP2 64-BIT'
  f3dbb2           gaindiff2        gainmaxa3        f3dba3            
  gainmaxb3        f3dbb3           gaindiff3        temper            
  alter#            
-   85.0322         8.176e+07         85.0322         8.176e+07        
-   91.0528          86.1955         8.119e+07         86.1955         
-  8.119e+07         92.2161           failed           failed         
-    failed           failed           failed          25.0000         
+   85.0322         8.024e+07         85.0322         8.024e+07        
+   91.0528          86.3520         7.980e+07         86.3520         
+  7.980e+07         92.3726          83.1417         6.970e+07        
+   83.1417         6.970e+07         89.1623          25.0000         
  1                 

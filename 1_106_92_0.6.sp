@@ -22,8 +22,8 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-.param Ru = 65k
-.param Rd = 88k
+.param Ru = 74k
+.param Rd = 110k
 
 * defining the supply voltages
 vdd vdd 0 2.5
@@ -32,22 +32,22 @@ vss vss 0 -2.5
 * defining load mosfet parameters
 .param wl1 = 8u
 .param ll1 = 2u
-.param wl2 = 2u
-.param ll2 = 2u
+*.param wl2 = 2u
+*.param ll2 = 2u
 
 * defining the mosfet parameters
-.param w1 = 6u
+.param w1 = 4u
 .param l1 = 2u
-.param w2 = 4u
-.param l2 = 2u
+*.param w2 = 2u
+*.param l2 = 2u
 *.param w3 = 2u
 *.param l3 = 2u
 
 * defining bias mosfet parameters
 .param wb1 = 4u
 .param lb1 = 2u
-.param wb2 = 6u
-.param lb2 = 2u
+*.param wb2 = 2u
+*.param lb2 = 2u
 *.param wb3 = 2u
 *.param lb3 = 2u
 
@@ -76,9 +76,9 @@ Cinb	vdd	iinb 'Cin'
 m1a   dra    0    iina   vss  nmos114  w='w1' l='l1'
 ml1a  dra    vbp  vdd    vdd  pmos114  w='wl1' l='ll1'
 mb1a  iina     vbn  vss    vss  nmos114  w='wb1' l='lb1'
-ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
-m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
-mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
+*ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
+*m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
+*mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
 *m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
 *mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
@@ -86,16 +86,16 @@ mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
 m1b   drb    0    iinb   vss  nmos114  w='w1' l='l1'
 ml1b  drb    vbp  vdd    vdd  pmos114  w='wl1' l='ll1'
 mb1b  iinb     vbn  vss    vss  nmos114  w='wb1' l='lb1'
-ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
-m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
-mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
+*ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
+*m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
+*mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
 *m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
 *mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** Current Bias ***
 *** Your Bias Circuitry here ***
 vbiasp vbp 0  1.4
-vbiasn vbn 0  -1.20 
+vbiasn vbn 0  -1.12 
 
 rua   vdd   dra    'Ru'
 rda   dra   vss    'Rd'

@@ -22,8 +22,8 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-.param Ru = 65k
-.param Rd = 88k
+.param Ru = 64k
+.param Rd = 108k
 
 * defining the supply voltages
 vdd vdd 0 2.5
@@ -38,18 +38,18 @@ vss vss 0 -2.5
 * defining the mosfet parameters
 .param w1 = 6u
 .param l1 = 2u
-.param w2 = 4u
+.param w2 = 8u
 .param l2 = 2u
-*.param w3 = 2u
-*.param l3 = 2u
+.param w3 = 32u
+.param l3 = 2u
 
 * defining bias mosfet parameters
-.param wb1 = 4u
+.param wb1 = 6u
 .param lb1 = 2u
-.param wb2 = 6u
+.param wb2 = 8u
 .param lb2 = 2u
-*.param wb3 = 2u
-*.param lb3 = 2u
+.param wb3 = 14u
+.param lb3 = 2u
 
 * Defining the input current source
 * Note, having each source with ac magnitude of 0.5 (as below) ensures a differential input magnitude of 1
@@ -66,8 +66,8 @@ Cina	vdd	iina 'Cin'
 Cinb	vdd	iinb 'Cin'
 
 * Defining the differential load 
-*RL	vouta		voutb		'RL'
-*CL	vouta		voutb		'CL'
+RL	vouta		voutb		'RL'
+CL	vouta		voutb		'CL'
 
 *** Your Trans-impedance Amplifier here ***
 ***	d	g	s	b	n/pmos114	w	l
@@ -79,8 +79,8 @@ mb1a  iina     vbn  vss    vss  nmos114  w='wb1' l='lb1'
 ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
 m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
 mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
-*m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
-*mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
+m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
+mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** B Side ***
 m1b   drb    0    iinb   vss  nmos114  w='w1' l='l1'
@@ -89,13 +89,13 @@ mb1b  iinb     vbn  vss    vss  nmos114  w='wb1' l='lb1'
 ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
 m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
 mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
-*m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
-*mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
+m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
+mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** Current Bias ***
 *** Your Bias Circuitry here ***
-vbiasp vbp 0  1.4
-vbiasn vbn 0  -1.20 
+vbiasp vbp 0  1.3
+vbiasn vbn 0  -1.24 
 
 rua   vdd   dra    'Ru'
 rda   dra   vss    'Rd'
@@ -109,6 +109,7 @@ rdb   drb   vss    'Rd'
 ** For ac simulation uncomment the following line** 
 .ac dec 1k 100 1g
 * add line for noise simulation
+.pz v(vouta) iina
 
 .measure ac gainmaxa1 max vdb(dra)
 .measure ac f3dba1 when vdb(dra)='gainmaxa1-3'

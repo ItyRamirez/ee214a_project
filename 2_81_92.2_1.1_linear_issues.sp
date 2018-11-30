@@ -46,7 +46,7 @@ vss vss 0 -2.5
 * defining bias mosfet parameters
 .param wb1 = 4u
 .param lb1 = 2u
-.param wb2 = 6u
+.param wb2 = 4u
 .param lb2 = 2u
 *.param wb3 = 2u
 *.param lb3 = 2u

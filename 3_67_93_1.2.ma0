@@ -1,0 +1,12 @@
+$DATA1 SOURCE='HSPICE' VERSION='I-2013.12-SP2 64-BIT'
+.TITLE '* design problem, ee114/214a- 2018'
+ gainmaxa1        f3dba1           gainmaxb1        f3dbb1            
+ gaindiff1        gainmaxa2        f3dba2           gainmaxb2         
+ f3dbb2           gaindiff2        gainmaxa3        f3dba3            
+ gainmaxb3        f3dbb3           gaindiff3        temper            
+ alter#            
+   91.2697         7.004e+07         91.2697         7.004e+07        
+   97.2903          89.7864         7.266e+07         89.7864         
+  7.266e+07         95.8070          87.2827         6.801e+07        
+   87.2827         6.801e+07         93.3033          25.0000         
+ 1                 

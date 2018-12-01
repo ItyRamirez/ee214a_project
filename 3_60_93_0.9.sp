@@ -23,7 +23,9 @@
 
 * Defining Low level circuit parameters
 .param Ru = 130k
-.param Rd = 177500
+.param Rd = 177.5k
+*.param Ru = 104k
+*.param Rd = 142k
 
 * defining the supply voltages
 vdd vdd 0 2.5

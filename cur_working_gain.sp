@@ -22,12 +22,8 @@
 .param RL  = 20k
 
 * Defining Low level circuit parameters
-*.param Ru = 84k
-*.param Rd = 106k
-*.param Ru = 220k
-*.param Rd = 2600k
-.param Ru = 440k
-.param Rd = 600k
+.param Ru = 74k
+.param Rd = 86k
 
 * defining the supply voltages
 vdd vdd 0 2.5
@@ -44,15 +40,15 @@ vss vss 0 -2.5
 .param l1 = 2u
 .param w2 = 4u
 .param l2 = 2u
-.param w3 = 16u
+.param w3 = 2u
 .param l3 = 2u
 
 * defining bias mosfet parameters
 .param wb1 = 6u
 .param lb1 = 2u
-.param wb2 = 2u
+.param wb2 = 6u
 .param lb2 = 2u
-.param wb3 = 10u
+.param wb3 = 2u
 .param lb3 = 2u
 
 * Defining the input current source
@@ -70,8 +66,8 @@ Cina	vdd	iina 'Cin'
 Cinb	vdd	iinb 'Cin'
 
 * Defining the differential load 
-RL	vouta		voutb		'RL'
-CL	vouta		voutb		'CL'
+*RL	vouta		voutb		'RL'
+*CL	vouta		voutb		'CL'
 
 *** Your Trans-impedance Amplifier here ***
 ***	d	g	s	b	n/pmos114	w	l
@@ -83,8 +79,8 @@ mb1a  iina     vbn  vss    vss  nmos114  w=wb1 l=lb1
 ml2a  vdd    vdd  sla    vss  nmos114  w=wl2 l=ll2
 m2a   sla    dra  sba    vss  nmos114  w=w2 l=l2
 mb2a  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
-m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
-mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
+*m3a   vdd    sla  vouta  vss  nmos114  w=w3 l=l3
+*mb3a  vouta  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** B Side ***
 m1b   drb    0    iinb   vss  nmos114  w=w1 l=l1
@@ -93,8 +89,8 @@ mb1b  iinb     vbn  vss    vss  nmos114  w=wb1 l=lb1
 ml2b  vdd    vdd  slb    vss  nmos114  w=wl2 l=ll2
 m2b   slb    drb  sba    vss  nmos114  w=w2 l=l2
 mb2b  sba    vbn  vss    vss  nmos114  w=wb2 l=lb2
-m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
-mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
+*m3b   vdd    slb  voutb  vss  nmos114  w=w3 l=l3
+*mb3b  voutb  vbn  vss    vss  nmos114  w=wb3 l=lb3
 
 *** Current Bias ***
 *** Your Bias Circuitry here ***

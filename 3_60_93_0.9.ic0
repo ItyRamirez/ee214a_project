@@ -1,8 +1,8 @@
 * "simulator" "HSPICE" 
 * "version" "I-2013.12-SP2 64-BIT"
 * "format" "HSP"
-* "rundate" "16:57:53 11/30/2018 "
-* "netlist" "cur_working.sp "
+* "rundate" "18:45:35 11/30/2018 "
+* "netlist" "3_60_93_0.9.sp "
 * "runtitle" "* design problem, ee114/214a- 2018"
 * time =    0.            
 * temperature =   25.0000        
@@ -10,17 +10,17 @@
 .option 
 + gmindc=   1.0000p       
 .nodeset
-+ dra =   1.3365        
-+ drb =   1.3365        
-+ iina =  -1.5887        
-+ iinb =  -1.5887        
-+ sba =-307.6325m       
-+ sla = 485.6929m       
-+ slb = 485.6929m       
-+ vbn =  -1.1200        
-+ vbp = 720.0000m       
++ dra = 382.0756m       
++ drb = 382.0756m       
++ iina =  -1.0198        
++ iinb =  -1.0198        
++ sba =-766.4917m       
++ sla =   1.0512        
++ slb =   1.0512        
++ vbn =  -1.5100        
++ vbp =   1.3200        
 + vdd =   2.5000        
-+ vouta =  -1.0432        
-+ voutb =  -1.0432        
++ vouta =-278.2254m       
++ voutb =-278.2254m       
 + vss =  -2.5000        
 ***   END: Saved Operating Point ***                     
